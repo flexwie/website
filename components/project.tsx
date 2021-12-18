@@ -1,9 +1,19 @@
-import * as React from 'react'
+import * as React from "react";
 
 interface ProjectProps {
-  name: string
+  name: string;
+  description: string
 }
 
-export const Project: React.FC<ProjectProps> = ({ name }) => {
-  return <div className='sm:w-1/3 p-6 sm:ml-4 mb-4 sm:mb-0 first:ml-0 border border-indigo-400 rounded-md shadow-md hover:shadow-lg active:shadow-xl active:bg-indigo-100'>{name}</div>
-}
+export const Project: React.FC<ProjectProps> = ({ name, description }) => {
+  return (
+    <div className="p-6 border border-indigo-400 rounded-md shadow-md hover:shadow-lg active:shadow-xl active:bg-indigo-100">
+      <div className="font-semibold mb-3">
+        {name}
+      </div>
+      <div>
+        {description}
+      </div>
+    </div>
+  );
+};

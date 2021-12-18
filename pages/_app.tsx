@@ -1,8 +1,12 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <div className='container mx-auto px-4 md:px-16 h-screen max-w-screen-lg'><Component {...pageProps} /></div>
+  return (
+    <div className="container mx-auto px-4 py-5 md:px-16 h-screen max-w-screen-lg">
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;
