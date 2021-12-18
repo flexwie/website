@@ -63,7 +63,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         header="Welcome"
         subheader="Nice to have you here! Take a closer look at my projects or read up on my journey with DevOps, the HashiStack and software developement."
       />
-      <div className="flex flex-col mr-4 ml-4 sm:m-0">
+      <div className="flex flex-col mx-4 sm:mx-0 mb-2 sm:mb-4">
         <Heading>Projects</Heading>
         <div className="flex flex-col sm:flex-row">
           {projects.map((p, i) => (
@@ -85,6 +85,8 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
                   title={p.frontMatter.title}
                   icon={p.frontMatter.icon}
                   tags={p.frontMatter.tags}
+                  date={p.frontMatter.date}
+                  description={p.frontMatter.description}
                 />
               </div>
             </Link>
