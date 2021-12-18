@@ -67,7 +67,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <Heading>Projects</Heading>
         <div className="flex flex-col sm:flex-row">
           {projects.map((p, i) => (
-            <Link href={p.to} key={i}>
+            <Link href={p.to} passHref key={i}>
               <div className="sm:w-1/3 sm:ml-4 mb-4 sm:mb-0 first:ml-0">
                 <Project description={p.description} name={p.name} />
               </div>

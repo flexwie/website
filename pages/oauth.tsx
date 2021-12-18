@@ -40,7 +40,7 @@ const PostPage: NextPage = () => {
       <Nav />
       <div className="font-sans font-extrabold text-3xl text-center mt-4 sm:mt-6 sm:text-left text-indigo-600 dark:text-indigo-400">OAuth Device Flow</div>
       <div className="mt-4">
-        My OAuth Device Flow package is a solid implementation of the <a className="text-indigo-200" href="https://www.oauth.com/oauth2-servers/device-flow/">OAuth 2.0 "Device Flow"</a>. It features a small bundle size, minimal dependecies and many configuration options like customized logging and token caching.
+        My OAuth Device Flow package is a solid implementation of the <a className="text-indigo-200" href="https://www.oauth.com/oauth2-servers/device-flow/">OAuth 2.0 &quot;Device Flow&quot;</a>. It features a small bundle size, minimal dependecies and many configuration options like customized logging and token caching.
       </div>
       <div className="mt-2">
         Try for yourself and request a JWT with the <span className="bg-gray-300 text-gray-700 rounded-md font-mono px-1">auth</span> command:

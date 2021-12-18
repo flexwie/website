@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ imageData, header, subheader }) => {
     <div className="container flex flex-col sm:flex-row w-full justify-center content-center items-center my-0 sm:my-8">
       <div>
         <div className="block w-52 h-52 mb-8 md:mb-0 md:mr-10">
-          <Image src={imageData} placeholder="blur" layout="responsive" />
+          <Image src={imageData} placeholder="blur" layout="responsive" alt="My Avatar" />
         </div>
       </div>
       <div className="flex flex-col mr-4 ml-4 sm:m-0">
