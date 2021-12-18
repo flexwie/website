@@ -20,8 +20,8 @@ export const BlogPreview: React.FC<BlogPreviewProps> = ({
       <div className="flex w-max">
         <div className="pr-2 text-lg">{icon}</div>
         <div className="flex flex-col">
-          <div className="font-medium text-lg">{title}</div>
-          <div className="mt-1">
+          <div className="font-medium text-lg  cursor-pointer">{title}</div>
+          <div className="mt-1 cursor-pointer">
             {description}
           </div>
           <div className="flex mt-2">

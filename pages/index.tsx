@@ -29,25 +29,25 @@ const getRandomProfilePicture = (): StaticImageData => {
 
 const projects = [
   {
-    name: "OAuth Device Flow",
+    name: "🖥️ OAuth Device Flow",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+      "Small, focused NodeJS client for OAuth Device Flows with custom logging and caching.",
     githubLink: "https://github.com/flexwie/oauth",
     to: "/oauth",
   },
   {
-    name: "Cluster",
+    name: " ✨ Cluster",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+      "Auto-provisioned cluster with Terraform running Consul and Traefik orchestrated by Consul on the Oracle Cloud.",
     githubLink: "https://github.com/flexwie/docsys",
     to: "/cluster",
   },
   {
-    name: "DocSys",
+    name: "🚀 lnk",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+      "High-performance, low-footprint URL shortener backend by Redis written in Go. Made for CLIs and APIs.",
     githubLink: "https://github.com/flexwie/docsys",
-    to: "/docsys",
+    to: "/lnk",
   },
 ];
 

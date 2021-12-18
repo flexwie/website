@@ -7,6 +7,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { Nav } from "../../components/nav";
 
 interface PostPageProps {
   frontMatter: {
@@ -23,8 +24,11 @@ const PostPage: NextPage<PostPageProps> = ({
 }) => {
   return (
     <div>
-      <h1>{title}</h1>
-      <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+      <Nav />
+      <div className="font-sans font-extrabold text-3xl text-center mt-4 sm:mt-6 sm:text-left text-indigo-600 dark:text-indigo-400">{title}</div>
+      <div className="prose mt-6 dark:prose-invert">
+        <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+      </div>
     </div>
   );
 };

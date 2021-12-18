@@ -9,7 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ imageData, header, subheader }) => {
   return (
-    <div className="container flex flex-col sm:flex-row w-full justify-center content-center items-center">
+    <div className="container flex flex-col sm:flex-row w-full justify-center content-center items-center my-0 sm:my-8">
       <div>
         <div className="block w-52 h-52 mb-8 md:mb-0 md:mr-10">
           <Image src={imageData} placeholder="blur" layout="responsive" />
