@@ -30,19 +30,22 @@ const getRandomProfilePicture = (): StaticImageData => {
 const projects = [
   {
     name: "OAuth Device Flow",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
     githubLink: "https://github.com/flexwie/oauth",
     to: "/oauth",
   },
   {
     name: "Cluster",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
     githubLink: "https://github.com/flexwie/docsys",
     to: "/cluster",
   },
   {
     name: "DocSys",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel faucibus nibh, fringilla accumsan eros. Cras a ex sit amet odio maximus vehicula. Fusce eu.",
     githubLink: "https://github.com/flexwie/docsys",
     to: "/docsys",
   },
@@ -64,8 +67,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <Heading>Projects</Heading>
         <div className="flex flex-col sm:flex-row">
           {projects.map((p, i) => (
-
-            <Link href={p.to} key={i} ><div className="sm:w-1/3 sm:ml-4 mb-4 sm:mb-0 first:ml-0"><Project description={p.description} name={p.name} /></div></Link>
+            <Link href={p.to} key={i}>
+              <div className="sm:w-1/3 sm:ml-4 mb-4 sm:mb-0 first:ml-0">
+                <Project description={p.description} name={p.name} />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
