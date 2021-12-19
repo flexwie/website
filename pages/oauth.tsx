@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { Heading } from "../components/heading";
 import { Nav } from "../components/nav";
 
 import Terminal from 'react-console-emulator'
@@ -11,28 +10,37 @@ const PostPage: NextPage = () => {
   const terminal = createRef<any>()
 
   const commands = {
+    npm: {
+      fn: (...args: any[]) => {
+        if (args[0] === "install" || args[0] === "i") {
+          return "The package is already installed! Go ahead and try it with auth"
+        }
+      }
+    },
     auth: {
       description: "Start the authentication process",
       fn: (...args: any[]) => {
         terminal.current.pushToStdout("Starting authentication process...")
 
         const app = new DeviceFlowClient({
-          audience: "wiegg.eu.auth0.com",
+          audience: "https://lnk.wie.gg",
           client_id: "Cq4ugV3lY0JczABgY4th64XvPQRInsJ0",
           scopes: ["openid", "offline_access"],
           code_url: "https://wiegg.eu.auth0.com/oauth/device/code",
           token_url: "https://wiegg.eu.auth0.com/oauth/token",
         }, {
-          output: (str) => terminal.current.pushToStdout(str)
+          output: (str) => terminal.current.pushToStdout(str),
+          useParams: true
         });
 
-        // app.acquireToken().then((token) => {
-        //   terminal.current.pushToStdout(`Your token is: ${token}`)
-        // }).catch((err) => {
-        //   terminal.current.pushToStdout(`There was an error`)
-        // })
+        app.acquireToken().then((token) => {
+          terminal.current.pushToStdout(`Your token was acquired: ${token.slice(0, 10)}...`)
+        }).catch((err) => {
+          console.log(err)
+          terminal.current.pushToStdout(`There was an error`)
+        })
       }
-    }
+    },
   }
 
   return (
@@ -46,13 +54,13 @@ const PostPage: NextPage = () => {
         Try for yourself and request a JWT with the <span className="bg-gray-300 text-gray-700 rounded-md font-mono px-1">auth</span> command:
       </div>
       <div>
-        <Terminal commands={commands} promptLabel="$" ref={terminal} className="my-8 shadow-md rounded-md" />
+        <Terminal commands={commands} promptLabel="$" ref={terminal} disableOnProcess autoFocus className="my-8 shadow-md rounded-md" />
       </div>
       <div>
         You can install the package from npm and start using it yourself:
       </div>
       <div onFocus={(e: any) => e.target.select()}>
-        <input spellCheck="false" className="rounded-md shadow-md w-full focus:border-0 focus:ring-0 bg-gray-300 text-black my-4 p-4 font-mono" onFocus={(e: any) => e.target.select()} value="npm install --save oauth_device_flow" />
+        <input readOnly spellCheck="false" className="rounded-md shadow-md w-full focus:border-0 focus:ring-0 bg-gray-300 text-black my-4 p-4 font-mono" onFocus={(e: any) => e.target.select()} value="npm install --save oauth_device_flow" />
       </div>
       <div></div>
     </div>
