@@ -9,7 +9,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html className='dark:bg-slate-800'>
-        <Head />
+        <Head>
+          <title>felixwie.com</title>
+        </Head>
         <body>
           <Main />
           <NextScript />
